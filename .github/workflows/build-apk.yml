@@ -31,29 +31,6 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Buat konfigurasi Firebase dummy jika belum tersedia
-        run: |
-          if [ ! -f app/google-services.json ]; then
-            cat > app/google-services.json <<'JSON'
-            {
-              "project_info": {
-                "project_number": "000000000000",
-                "project_id": "dummy-rdmku-project",
-                "storage_bucket": "dummy-rdmku-project.appspot.com"
-              },
-              "client": [{
-                "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-                  "android_client_info": {
-                    "package_name": "id.nwkalutara.absensi"
-                  }
-                },
-                "api_key": [{"current_key": "DUMMY_API_KEY_NOT_FOR_PRODUCTION"}]
-              }],
-              "configuration_version": "1"
-            }
-            JSON
-          fi
 
       - name: Build APK
         run: gradle assembleDebug assembleRelease
