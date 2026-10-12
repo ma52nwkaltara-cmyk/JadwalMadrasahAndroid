@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Absensi RDMKU</string>
+    <string name="default_notification_channel_id">absensi_rdmku_announcement</string>
+    <string name="default_notification_channel_name">Notifikasi Absensi RDMKU</string>
 </resources>
